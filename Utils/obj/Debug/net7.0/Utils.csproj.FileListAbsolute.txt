@@ -1,0 +1,30 @@
+D:\Gamedev\Utils\bin\Debug\net7.0\Utils.deps.json
+D:\Gamedev\Utils\bin\Debug\net7.0\Utils.dll
+D:\Gamedev\Utils\bin\Debug\net7.0\Utils.pdb
+D:\Gamedev\Utils\obj\Debug\net7.0\Utils.csproj.AssemblyReference.cache
+D:\Gamedev\Utils\obj\Debug\net7.0\Utils.GeneratedMSBuildEditorConfig.editorconfig
+D:\Gamedev\Utils\obj\Debug\net7.0\Utils.AssemblyInfoInputs.cache
+D:\Gamedev\Utils\obj\Debug\net7.0\Utils.AssemblyInfo.cs
+D:\Gamedev\Utils\obj\Debug\net7.0\Utils.csproj.CoreCompileInputs.cache
+D:\Gamedev\Utils\obj\Debug\net7.0\Utils.dll
+D:\Gamedev\Utils\obj\Debug\net7.0\refint\Utils.dll
+D:\Gamedev\Utils\obj\Debug\net7.0\Utils.pdb
+D:\Gamedev\Utils\obj\Debug\net7.0\ref\Utils.dll
+D:\Gamedev\Utils\bin\Debug\net7.0\DatabaseIntegration.dll
+D:\Gamedev\Utils\bin\Debug\net7.0\DatabaseIntegration.pdb
+D:\Gamedev\Utils\obj\Debug\net7.0\Utils.csproj.CopyComplete
+D:\Gamedev\Spestara MasterServer\Utils\bin\Debug\net7.0\Utils.deps.json
+D:\Gamedev\Spestara MasterServer\Utils\bin\Debug\net7.0\Utils.dll
+D:\Gamedev\Spestara MasterServer\Utils\bin\Debug\net7.0\Utils.pdb
+D:\Gamedev\Spestara MasterServer\Utils\bin\Debug\net7.0\DatabaseIntegration.dll
+D:\Gamedev\Spestara MasterServer\Utils\bin\Debug\net7.0\DatabaseIntegration.pdb
+D:\Gamedev\Spestara MasterServer\Utils\obj\Debug\net7.0\Utils.csproj.AssemblyReference.cache
+D:\Gamedev\Spestara MasterServer\Utils\obj\Debug\net7.0\Utils.GeneratedMSBuildEditorConfig.editorconfig
+D:\Gamedev\Spestara MasterServer\Utils\obj\Debug\net7.0\Utils.AssemblyInfoInputs.cache
+D:\Gamedev\Spestara MasterServer\Utils\obj\Debug\net7.0\Utils.AssemblyInfo.cs
+D:\Gamedev\Spestara MasterServer\Utils\obj\Debug\net7.0\Utils.csproj.CoreCompileInputs.cache
+D:\Gamedev\Spestara MasterServer\Utils\obj\Debug\net7.0\Utils.csproj.CopyComplete
+D:\Gamedev\Spestara MasterServer\Utils\obj\Debug\net7.0\Utils.dll
+D:\Gamedev\Spestara MasterServer\Utils\obj\Debug\net7.0\refint\Utils.dll
+D:\Gamedev\Spestara MasterServer\Utils\obj\Debug\net7.0\Utils.pdb
+D:\Gamedev\Spestara MasterServer\Utils\obj\Debug\net7.0\ref\Utils.dll

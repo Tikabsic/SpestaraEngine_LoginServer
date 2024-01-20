@@ -1,0 +1,17 @@
+D:\Gamedev\ServerData\bin\Debug\net7.0\Services.deps.json
+D:\Gamedev\ServerData\bin\Debug\net7.0\Services.dll
+D:\Gamedev\ServerData\bin\Debug\net7.0\Services.pdb
+D:\Gamedev\ServerData\obj\Debug\net7.0\Services.csproj.AssemblyReference.cache
+D:\Gamedev\ServerData\obj\Debug\net7.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Gamedev\ServerData\obj\Debug\net7.0\Services.AssemblyInfoInputs.cache
+D:\Gamedev\ServerData\obj\Debug\net7.0\Services.AssemblyInfo.cs
+D:\Gamedev\ServerData\obj\Debug\net7.0\Services.csproj.CoreCompileInputs.cache
+D:\Gamedev\ServerData\obj\Debug\net7.0\Services.dll
+D:\Gamedev\ServerData\obj\Debug\net7.0\refint\Services.dll
+D:\Gamedev\ServerData\obj\Debug\net7.0\Services.pdb
+D:\Gamedev\ServerData\obj\Debug\net7.0\ref\Services.dll
+D:\Gamedev\ServerData\bin\Debug\net7.0\DatabaseIntegration.dll
+D:\Gamedev\ServerData\bin\Debug\net7.0\DatabaseIntegration.pdb
+D:\Gamedev\ServerData\obj\Debug\net7.0\Services.csproj.CopyComplete
+D:\Gamedev\ServerData\bin\Debug\net7.0\Utils.dll
+D:\Gamedev\ServerData\bin\Debug\net7.0\Utils.pdb
