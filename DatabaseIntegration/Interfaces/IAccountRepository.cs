@@ -5,6 +5,6 @@ namespace DatabaseIntegration.Interfaces
 {
     public interface IAccountRepository
     {
-        Task AddNewAccount(Account acc);
+        Task AddNewAccount(GameAccount acc);
     }
 }

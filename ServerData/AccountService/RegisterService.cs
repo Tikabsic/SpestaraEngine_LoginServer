@@ -1,10 +1,10 @@
 ﻿using DatabaseIntegration.Database;
-using DatabaseIntegration.Entities.Player;
 using DatabaseIntegration.Interfaces;
 using Services.DTO;
 using Services.Interfaces;
 using Services.Validator;
 using Utils.Hasher;
+
 namespace Services.AccountServices
 {
     internal class RegisterService : IRegisterService
@@ -24,7 +24,7 @@ namespace Services.AccountServices
 
         public async Task<string> RegisterNewUser(RegisterRequest dto)
         {
-            var validator = new AccountRegistrationValidator();
+            var validator = new AccountRegistrationValidator(_dbContext);
             var validationresult = validator.Validate(dto);
 
             if (!validationresult.IsValid)
@@ -34,7 +34,7 @@ namespace Services.AccountServices
 
             var hashedPassword = _passwordHasher.Hash(dto.Password);
 
-            var newAccount = new Account();
+            DatabaseIntegration.Entities.Player.GameAccount newAccount = new DatabaseIntegration.Entities.Player.GameAccount();
 
             newAccount.Email = dto.Email;
             newAccount.AccountName = dto.AccountName;

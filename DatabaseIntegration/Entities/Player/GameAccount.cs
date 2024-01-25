@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseIntegration.Entities.Player
 {
-    public class Account
+    public class GameAccount
     {
         public Guid Id { get; set; }
         public DateTime CreationDate { get; set; }

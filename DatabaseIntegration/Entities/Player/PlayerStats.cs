@@ -10,7 +10,7 @@ namespace DatabaseIntegration.Entities.Player
     public class PlayerStats
     {
         [Key]
-        public int GameCharacterId { get; set; }
+        public Guid GameCharacterId { get; set; }
         public GameCharacter GameCharacter { get; set; }
         public int MaxHp { get; set; }
         public int CurrentHp { get; set; }

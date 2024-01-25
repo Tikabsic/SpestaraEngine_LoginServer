@@ -14,7 +14,7 @@ namespace Utils
         {
 
             //Scoped Services
-            services.AddScoped<IPasswordHasher, PasswordHasher >();
+            services.AddScoped<IPasswordHasher, PasswordHasher>();
 
             return services;
         }

@@ -24,17 +24,20 @@ namespace DatabaseIntegration.Migrations
 
             modelBuilder.Entity("DatabaseIntegration.Entities.Items.ObtainableItem", b =>
                 {
-                    b.Property<int>("OwnerId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ItemDescription")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("OwnerId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("ItemId")
                         .HasColumnType("int");
 
+                    b.Property<int>("ItemIndex")
+                        .HasColumnType("int");
+
                     b.Property<string>("ItemName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quality")
+                        .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -43,10 +46,10 @@ namespace DatabaseIntegration.Migrations
 
                     b.HasIndex("ItemId");
 
-                    b.ToTable("ObtainableItems", (string)null);
+                    b.ToTable("ObtainableItems");
                 });
 
-            modelBuilder.Entity("DatabaseIntegration.Entities.Player.Account", b =>
+            modelBuilder.Entity("DatabaseIntegration.Entities.Player.GameAccount", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -74,16 +77,14 @@ namespace DatabaseIntegration.Migrations
                     b.HasIndex("Id")
                         .IsUnique();
 
-                    b.ToTable("Accounts", (string)null);
+                    b.ToTable("Accounts");
                 });
 
             modelBuilder.Entity("DatabaseIntegration.Entities.Player.GameCharacter", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("AccountId")
                         .HasColumnType("uniqueidentifier");
@@ -109,13 +110,51 @@ namespace DatabaseIntegration.Migrations
                         .IsUnique()
                         .HasFilter("[Nickname] IS NOT NULL");
 
-                    b.ToTable("GameCharacters", (string)null);
+                    b.ToTable("GameCharacters");
+                });
+
+            modelBuilder.Entity("DatabaseIntegration.Entities.Player.GameCharacterTransform", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("GameCharacterId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<float>("PositionX")
+                        .HasColumnType("real");
+
+                    b.Property<float>("PositionY")
+                        .HasColumnType("real");
+
+                    b.Property<float>("PositionZ")
+                        .HasColumnType("real");
+
+                    b.Property<float>("RotationW")
+                        .HasColumnType("real");
+
+                    b.Property<float>("RotationX")
+                        .HasColumnType("real");
+
+                    b.Property<float>("RotationY")
+                        .HasColumnType("real");
+
+                    b.Property<float>("RotationZ")
+                        .HasColumnType("real");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GameCharacterId")
+                        .IsUnique();
+
+                    b.ToTable("GameCharacterTransforms");
                 });
 
             modelBuilder.Entity("DatabaseIntegration.Entities.Player.PlayerSkills", b =>
                 {
-                    b.Property<int>("GameCharacterId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("GameCharacterId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Agility")
                         .HasColumnType("int");
@@ -131,13 +170,13 @@ namespace DatabaseIntegration.Migrations
                     b.HasIndex("GameCharacterId")
                         .IsUnique();
 
-                    b.ToTable("PlayersSkills", (string)null);
+                    b.ToTable("PlayersSkills");
                 });
 
             modelBuilder.Entity("DatabaseIntegration.Entities.Player.PlayerStats", b =>
                 {
-                    b.Property<int>("GameCharacterId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("GameCharacterId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("CharacterLevelExperiencePoints")
                         .HasColumnType("int");
@@ -165,7 +204,7 @@ namespace DatabaseIntegration.Migrations
                     b.HasIndex("GameCharacterId")
                         .IsUnique();
 
-                    b.ToTable("PlayersStats", (string)null);
+                    b.ToTable("PlayersStats");
                 });
 
             modelBuilder.Entity("DatabaseIntegration.Entities.Items.ObtainableItem", b =>
@@ -181,13 +220,24 @@ namespace DatabaseIntegration.Migrations
 
             modelBuilder.Entity("DatabaseIntegration.Entities.Player.GameCharacter", b =>
                 {
-                    b.HasOne("DatabaseIntegration.Entities.Player.Account", "Account")
+                    b.HasOne("DatabaseIntegration.Entities.Player.GameAccount", "Account")
                         .WithMany("GameCharacters")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Account");
+                });
+
+            modelBuilder.Entity("DatabaseIntegration.Entities.Player.GameCharacterTransform", b =>
+                {
+                    b.HasOne("DatabaseIntegration.Entities.Player.GameCharacter", "GameCharacter")
+                        .WithOne("Transform")
+                        .HasForeignKey("DatabaseIntegration.Entities.Player.GameCharacterTransform", "GameCharacterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("GameCharacter");
                 });
 
             modelBuilder.Entity("DatabaseIntegration.Entities.Player.PlayerSkills", b =>
@@ -212,7 +262,7 @@ namespace DatabaseIntegration.Migrations
                     b.Navigation("GameCharacter");
                 });
 
-            modelBuilder.Entity("DatabaseIntegration.Entities.Player.Account", b =>
+            modelBuilder.Entity("DatabaseIntegration.Entities.Player.GameAccount", b =>
                 {
                     b.Navigation("GameCharacters");
                 });
@@ -224,6 +274,8 @@ namespace DatabaseIntegration.Migrations
                     b.Navigation("PlayerSkills");
 
                     b.Navigation("PlayerStats");
+
+                    b.Navigation("Transform");
                 });
 #pragma warning restore 612, 618
         }

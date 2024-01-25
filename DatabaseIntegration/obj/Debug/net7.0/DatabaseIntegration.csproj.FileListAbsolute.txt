@@ -12,3 +12,18 @@ D:\Gamedev\DatabaseIntegration\obj\Debug\net7.0\refint\DatabaseIntegration.dll
 D:\Gamedev\DatabaseIntegration\obj\Debug\net7.0\DatabaseIntegration.pdb
 D:\Gamedev\DatabaseIntegration\obj\Debug\net7.0\DatabaseIntegration.genruntimeconfig.cache
 D:\Gamedev\DatabaseIntegration\obj\Debug\net7.0\ref\DatabaseIntegration.dll
+D:\Gamedev\Spestara MasterServer\DatabaseIntegration\bin\Debug\net7.0\DatabaseIntegration.deps.json
+D:\Gamedev\Spestara MasterServer\DatabaseIntegration\bin\Debug\net7.0\DatabaseIntegration.runtimeconfig.json
+D:\Gamedev\Spestara MasterServer\DatabaseIntegration\bin\Debug\net7.0\DatabaseIntegration.dll
+D:\Gamedev\Spestara MasterServer\DatabaseIntegration\bin\Debug\net7.0\DatabaseIntegration.pdb
+D:\Gamedev\Spestara MasterServer\DatabaseIntegration\obj\Debug\net7.0\DatabaseIntegration.csproj.AssemblyReference.cache
+D:\Gamedev\Spestara MasterServer\DatabaseIntegration\obj\Debug\net7.0\DatabaseIntegration.GeneratedMSBuildEditorConfig.editorconfig
+D:\Gamedev\Spestara MasterServer\DatabaseIntegration\obj\Debug\net7.0\DatabaseIntegration.AssemblyInfoInputs.cache
+D:\Gamedev\Spestara MasterServer\DatabaseIntegration\obj\Debug\net7.0\DatabaseIntegration.AssemblyInfo.cs
+D:\Gamedev\Spestara MasterServer\DatabaseIntegration\obj\Debug\net7.0\DatabaseIntegration.csproj.CoreCompileInputs.cache
+D:\Gamedev\Spestara MasterServer\DatabaseIntegration\obj\Debug\net7.0\DatabaseIntegration.dll
+D:\Gamedev\Spestara MasterServer\DatabaseIntegration\obj\Debug\net7.0\refint\DatabaseIntegration.dll
+D:\Gamedev\Spestara MasterServer\DatabaseIntegration\obj\Debug\net7.0\DatabaseIntegration.pdb
+D:\Gamedev\Spestara MasterServer\DatabaseIntegration\obj\Debug\net7.0\DatabaseIntegration.genruntimeconfig.cache
+D:\Gamedev\Spestara MasterServer\DatabaseIntegration\obj\Debug\net7.0\ref\DatabaseIntegration.dll
+D:\Gamedev\Spestara MasterServer\DatabaseIntegration\obj\Debug\net7.0\DatabaseIntegration.sourcelink.json

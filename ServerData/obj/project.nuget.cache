@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HnGRt8RfdK25XiQgT9YnE/CLu2JciFzo0arHJb8zSJ1J0flhcsxfekdvcY7K5pu8L6TuJjDC9qREZpamkgTlfw==",
+  "dgSpecHash": "sRlW6HkDvnQbwdvWAEE4Zsk3RvvO8S0LCtRkcngvL5amPoGx8FsAE8bcFBv0Q7rQDEAOFgJx30Qu6EcLw7qGmg==",
   "success": true,
   "projectFilePath": "D:\\Gamedev\\Spestara MasterServer\\ServerData\\Services.csproj",
   "expectedPackageFiles": [
@@ -58,7 +58,10 @@
     "C:\\Users\\makow\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\makow\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\makow\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\makow\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+    "C:\\Users\\makow\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\makow\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\makow\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\makow\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512"
   ],
   "logs": []
 }

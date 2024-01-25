@@ -25,6 +25,9 @@ namespace DatabaseIntegration.Configuration
             builder.HasOne(gc => gc.PlayerSkills)
                 .WithOne(ps => ps.GameCharacter);
 
+            builder.HasOne(gc => gc.Transform)
+                .WithOne(t => t.GameCharacter);
+
             builder.HasMany(gc => gc.Inventory)
                 .WithOne(oi => oi.Owner)
                 .HasForeignKey(oi => oi.OwnerId);

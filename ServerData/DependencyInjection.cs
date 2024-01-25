@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Services.Account;
 
 namespace Services
 {
@@ -16,7 +17,7 @@ namespace Services
 
             //Scoped Services
             services.AddScoped<IRegisterService, RegisterService>();
-
+            services.AddScoped<ILoginService, LoginService>();
 
             return services;
         }

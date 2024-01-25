@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DatabaseIntegration.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class Changes_v001v : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -31,8 +31,7 @@ namespace DatabaseIntegration.Migrations
                 name: "GameCharacters",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     AccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     SlotNumber = table.Column<int>(type: "int", nullable: false),
                     Nickname = table.Column<string>(type: "nvarchar(18)", maxLength: 18, nullable: true),
@@ -50,14 +49,40 @@ namespace DatabaseIntegration.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "GameCharacterTransforms",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    GameCharacterId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    PositionX = table.Column<float>(type: "real", nullable: false),
+                    PositionY = table.Column<float>(type: "real", nullable: false),
+                    PositionZ = table.Column<float>(type: "real", nullable: false),
+                    RotationX = table.Column<float>(type: "real", nullable: false),
+                    RotationY = table.Column<float>(type: "real", nullable: false),
+                    RotationZ = table.Column<float>(type: "real", nullable: false),
+                    RotationW = table.Column<float>(type: "real", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GameCharacterTransforms", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_GameCharacterTransforms_GameCharacters_GameCharacterId",
+                        column: x => x.GameCharacterId,
+                        principalTable: "GameCharacters",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ObtainableItems",
                 columns: table => new
                 {
-                    OwnerId = table.Column<int>(type: "int", nullable: false),
+                    OwnerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ItemId = table.Column<int>(type: "int", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
                     ItemName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ItemDescription = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    Quality = table.Column<int>(type: "int", nullable: false),
+                    ItemIndex = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -74,7 +99,7 @@ namespace DatabaseIntegration.Migrations
                 name: "PlayersSkills",
                 columns: table => new
                 {
-                    GameCharacterId = table.Column<int>(type: "int", nullable: false),
+                    GameCharacterId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Strength = table.Column<int>(type: "int", nullable: false),
                     Agility = table.Column<int>(type: "int", nullable: false),
                     Defence = table.Column<int>(type: "int", nullable: false)
@@ -94,7 +119,7 @@ namespace DatabaseIntegration.Migrations
                 name: "PlayersStats",
                 columns: table => new
                 {
-                    GameCharacterId = table.Column<int>(type: "int", nullable: false),
+                    GameCharacterId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     MaxHp = table.Column<int>(type: "int", nullable: false),
                     CurrentHp = table.Column<int>(type: "int", nullable: false),
                     MaxMana = table.Column<int>(type: "int", nullable: false),
@@ -139,6 +164,12 @@ namespace DatabaseIntegration.Migrations
                 filter: "[Nickname] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_GameCharacterTransforms_GameCharacterId",
+                table: "GameCharacterTransforms",
+                column: "GameCharacterId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ObtainableItems_ItemId",
                 table: "ObtainableItems",
                 column: "ItemId");
@@ -159,6 +190,9 @@ namespace DatabaseIntegration.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "GameCharacterTransforms");
+
             migrationBuilder.DropTable(
                 name: "ObtainableItems");
 

@@ -5,10 +5,14 @@ using Services.DTO;
 namespace Services.Validator
 {
 
-    internal class AccountRegistrationValidator : AbstractValidator<RegisterRequest>
+    public class AccountRegistrationValidator : AbstractValidator<RegisterRequest>
     {
-        public AccountRegistrationValidator()
+        public AccountRegistrationValidator(AppDbContext dbContext)
         {
+            RuleFor(a => a.AccountName)
+                .MinimumLength(5)
+                .MaximumLength(16);
+
             RuleFor(a => a.ConfirmationPassword)
                 .Equal(a => a.Password);
 
@@ -16,12 +20,31 @@ namespace Services.Validator
                 .MinimumLength(6)
                 .MaximumLength(24);
 
-            RuleFor(a => a.AccountName)
-                .MinimumLength(5)
-                .MaximumLength(16);
-
             RuleFor(a => a.Email)
                 .EmailAddress();
+
+            RuleFor(a => a.Email)
+                .Custom((value, context) =>
+                {
+                    var emailToValidate = dbContext.Accounts.Any(u => u.Email == value);
+
+                    if (emailToValidate == true)
+                    {
+                        context.AddFailure("Email", "Email already in use.");
+                    }
+                });
+
+            RuleFor(a => a.AccountName)
+                .Custom((value, context) =>
+                {
+                    var emailToValidate = dbContext.Accounts.Any(u => u.AccountName == value);
+
+                    if (emailToValidate == true)
+                    {
+                        context.AddFailure("AccountName", "Name already in use.");
+                    }
+
+                });
         }
     }
 }

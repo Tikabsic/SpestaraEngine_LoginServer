@@ -28,3 +28,4 @@ D:\Gamedev\Spestara MasterServer\Utils\obj\Debug\net7.0\Utils.dll
 D:\Gamedev\Spestara MasterServer\Utils\obj\Debug\net7.0\refint\Utils.dll
 D:\Gamedev\Spestara MasterServer\Utils\obj\Debug\net7.0\Utils.pdb
 D:\Gamedev\Spestara MasterServer\Utils\obj\Debug\net7.0\ref\Utils.dll
+D:\Gamedev\Spestara MasterServer\Utils\obj\Debug\net7.0\Utils.sourcelink.json

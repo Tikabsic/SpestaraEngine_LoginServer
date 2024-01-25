@@ -13,7 +13,7 @@ namespace DatabaseIntegration.Repositories
             _appDbContext = context;
         }
 
-        public async Task AddNewAccount(Account acc)
+        public async Task AddNewAccount(GameAccount acc)
         {
             await _appDbContext.Accounts.AddAsync(acc);
             _appDbContext.SaveChanges();

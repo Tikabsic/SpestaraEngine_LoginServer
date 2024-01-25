@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace DatabaseIntegration.Configuration
 {
-    internal class AccountConfiguration : IEntityTypeConfiguration<Account>
+    internal class AccountConfiguration : IEntityTypeConfiguration<GameAccount>
     {
-        public void Configure(EntityTypeBuilder<Account> builder)
+        public void Configure(EntityTypeBuilder<GameAccount> builder)
         {
             builder.HasIndex(a => a.Id).IsUnique();
             builder.HasKey(a => a.Id);

@@ -7,10 +7,11 @@ namespace DatabaseIntegration.Entities.Items
     {
         public GameCharacter Owner { get; set; }
         [Key]
-        public int OwnerId { get; set; }
+        public Guid OwnerId { get; set; }
         public int ItemId { get; set; }
-        public int Quantity { get; set; }
         public string ItemName { get; set; }
-        public string ItemDescription { get; set; }
+        public int Quantity { get; set; }
+        public int Quality { get; set; }
+        public int ItemIndex { get; set; }
     }
 }

@@ -6,7 +6,7 @@ namespace DatabaseIntegration.Entities.Player
     public class PlayerSkills
     {
         [Key]
-        public int GameCharacterId { get; set; }
+        public Guid GameCharacterId { get; set; }
         public GameCharacter GameCharacter { get; set; }
         public int Strength { get; set; }
         public int Agility { get; set; }
